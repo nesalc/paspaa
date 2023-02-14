@@ -14,7 +14,7 @@
       console.log(msg);
       var log = document.getElementById("log");
       if (log) {
-        log.innerHTML += msg + "<br";
+        log.innerHTML = msg + "<br" + log.innerHTML;
       }
     }
     
