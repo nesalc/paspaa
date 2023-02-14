@@ -29,6 +29,7 @@
     console.log("showPosition1");
     x.innerHTML = "Latitude: " + position.coords.latitude +
     "<br>Longitude: " + position.coords.longitude;
+    setTimeout(() => {showPosition();}, 1000)
   }
     
   getLocation();
