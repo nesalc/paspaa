@@ -6,13 +6,24 @@
 <body>
   <h1>Pas På</h1>
   <p id="demo"></p>
+  
+  <div id="log"></div>
 
-  <script>
-    console.log("script");
+  <script>    
+    function log(msg) {
+      console.log(msg);
+      var log = document.getElementById("log");
+      if (log) {
+        log.innerHTML += msg + "<br";
+      }
+    }
+    
+    
+    log("script");
   var x = document.getElementById("demo");
 
   function getLocation() {
-    console.log("getLocation");
+    log("getLocation");
     if (navigator.geolocation) {
       setTimeout(() => {showPosition();}, 1000)
     } else {
@@ -21,12 +32,12 @@
   }
 
   function showPosition() {
-    console.log("showPosition");
+    log("showPosition");
     navigator.geolocation.getCurrentPosition(showPosition1);
   }
 
   function showPosition1(position) {    
-    console.log("showPosition1");
+    log("showPosition1");
     x.innerHTML = "Latitude: " + position.coords.latitude +
     "<br>Longitude: " + position.coords.longitude;
     setTimeout(() => {showPosition();}, 1000)
